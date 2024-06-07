@@ -60,17 +60,15 @@ if (CLinput.length === 1 && getChoiceId(CLinput[0]) !== null) {
   p1_id = getChoiceId(CLinput[0]);
   p2_id = getChoiceId(CLinput[1]);
 } else {
-  console.log(
-    "\x1b[31m",
-    `TypeError: \x1b[0m Please type in one (vs Computer) or two (vs Human) possibilities from:
+  console.log(`\x1b[31m \x1b[45m
+    TypeError: \x1b[0m Please type in one (vs Computer) or two (vs Human) possibilities from:\x1b[32m
 
      ${Object.values(mlInput)
        .filter((choice) => choice.name)
        .map((choice) => choice.name)
        .join(", ")}
-
-     Let's try it again!`
-  );
+\x1b[0m
+     Let's try it again!`);
   process.exit(1);
 }
 
@@ -83,7 +81,9 @@ const gRes = ResMtrx.find(
 // Command line output: game mode, result, player/computer choices, copyright
 console.log(
   "\x1b[31m",
-  `You ${gRes.restext} the game!`,
+  `
+  You ${gRes.restext} the game!
+  `,
   "\x1b[0m",
   `
 Player 1 choose: ${CLinput[0]}
@@ -91,6 +91,6 @@ Player 1 choose: ${CLinput[0]}
 Player 2 choose: ${CLinput[1] || mlInput.find((item) => item.id === p2_id).name}
 (Opponent/Computer) 
 
-Copyright KT -`,
+ \u00A9 KT -`,
   currentyear
 );
