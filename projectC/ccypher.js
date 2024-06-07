@@ -59,4 +59,4 @@ const caesarCipher = (str, shift) => {
 
 const encryptedText = caesarCipher(phrase, shift);
 console.log(`Original: ${phrase}`);
-console.log(`Encrypted: ${encryptedText}`);
+console.log(`Cyphered: ${encryptedText}`);

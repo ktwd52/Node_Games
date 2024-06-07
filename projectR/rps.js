@@ -48,7 +48,7 @@ let p1_id;
 let p2_id;
 
 if (CLinput.length === 1 && getChoiceId(CLinput[0]) !== null) {
-  console.log("1 player mode (Human vs Computer)");
+  console.log("1 player mode (vs Computer)");
   p1_id = getChoiceId(CLinput[0]);
   p2_id = Math.floor(Math.random() * 3) + 1;
 } else if (
@@ -56,13 +56,13 @@ if (CLinput.length === 1 && getChoiceId(CLinput[0]) !== null) {
   getChoiceId(CLinput[0]) !== null &&
   getChoiceId(CLinput[1]) !== null
 ) {
-  console.log("2 player mode (Human vs Human)");
+  console.log("2 player mode (vs Human)");
   p1_id = getChoiceId(CLinput[0]);
   p2_id = getChoiceId(CLinput[1]);
 } else {
   console.log(
     "\x1b[31m",
-    `TypeError: \x1b[0m Please type in one (Human vs Computer) or two (Human vs Human) possibilities from:
+    `TypeError: \x1b[0m Please type in one (vs Computer) or two (vs Human) possibilities from:
 
      ${Object.values(mlInput)
        .filter((choice) => choice.name)
